@@ -1,5 +1,6 @@
 import { MapPin, ShoppingBag, ArrowDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 export function HeroSection() {
   return (
@@ -15,8 +16,16 @@ export function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
           <div className="space-y-6 md:space-y-8 text-center lg:text-left">
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-              <span className="gradient-text">PANINOTECA</span>
-              <br />
+              <div className="flex items-center justify-center lg:justify-start gap-4 mb-2">
+                <Image 
+                  src="/logo.png" 
+                  alt="Dar Maestro" 
+                  width={80} 
+                  height={80}
+                  className="h-16 md:h-20 w-auto"
+                />
+                <span className="gradient-text">PANINOTECA</span>
+              </div>
               Lunch, Dinner Brunch, Drinks
             </h1>
 
@@ -98,8 +107,8 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Hero Image - Mobile (Smaller, positioned bottom right) */}
-          <div className="block lg:hidden absolute bottom-8 right-4 w-32 h-32 float-animation z-10">
+          {/* Hero Image - Mobile (Smaller, positioned top right) */}
+          <div className="block lg:hidden absolute top-4 right-4 w-28 h-28 float-animation z-10">
             <div className="relative w-full h-full">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 rounded-2xl blur-xl" />
               <div className="relative rounded-2xl overflow-hidden border border-primary/20 shadow-2xl">
