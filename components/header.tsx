@@ -55,7 +55,7 @@ export function Header() {
         <div className="flex items-center justify-between h-20 md:h-24">
           <a href="#" className="flex items-center gap-2 md:gap-3">
             <Image 
-              src="/logooo.jpg" 
+              src="/logooo.png" 
               alt="Dar Maestro Logo" 
               width={360} 
               height={120}
