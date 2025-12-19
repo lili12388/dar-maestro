@@ -123,9 +123,21 @@ export function ReviewsSection() {
 
               {/* Review images */}
               {review.images && review.images.length > 0 && (
-                <div className={`grid gap-2 ${review.images.length === 1 ? 'grid-cols-1' : review.images.length === 2 ? 'grid-cols-2' : 'grid-cols-3'}`}>
+                <div className={`grid gap-3 ${
+                  review.images.length === 1 
+                    ? 'grid-cols-1' 
+                    : review.images.length === 2 
+                    ? 'grid-cols-2' 
+                    : 'grid-cols-2 md:grid-cols-3'
+                }`}>
                   {review.images.map((imageSrc, imgIndex) => (
-                    <div key={imgIndex} className="rounded-lg overflow-hidden border border-border/50 aspect-video bg-muted/20 relative">
+                    <div 
+                      key={imgIndex} 
+                      className={`rounded-lg overflow-hidden border border-border/50 bg-muted/20 relative ${
+                        review.images.length === 3 && imgIndex === 2 ? 'col-span-2 md:col-span-1' : ''
+                      }`}
+                      style={{ aspectRatio: '4/3' }}
+                    >
                       <Image
                         src={imageSrc}
                         alt={`${review.author}'s review photo ${imgIndex + 1}`}
