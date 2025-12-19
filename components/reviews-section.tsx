@@ -1,5 +1,6 @@
 import { Star, Quote } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 const reviews = [
   {
@@ -7,63 +8,63 @@ const reviews = [
     author: "Claire Smith",
     source: "Google",
     rating: 5,
-    hasImage: true,
+    images: ["/reviews/unnamed.jpg", "/reviews/unnamed-1.jpg"], // Claire has 2 photos
   },
   {
     text: "Visited Rome from Canada, and we ate at this panini shop multiple times over our stay. The store owner is kind, humble, and friendly. He gave us tons of tips for exploring Rome and the sandwiches were amazing!",
     author: "Jake Eickmeier",
     source: "Google",
     rating: 5,
-    hasImage: true,
+    images: ["/reviews/unnamed-2.jpg"],
   },
   {
     text: "We stumbled on this little place in Testaccio our first day in Rome. HIGHLY RECOMMENDED, great sandwich on a fresh bun, great conversation with Maestro himself. Worth looking for!",
     author: "Mike O",
     source: "Google",
     rating: 5,
-    hasImage: true,
+    images: ["/reviews/unnamed-3.jpg"],
   },
   {
     text: "Bread could be slightly better, but great porchetta and fresh ingredients, from an enthusiastic owner. Would go again.",
     author: "Richard Q",
     source: "Google",
     rating: 5,
-    hasImage: true,
+    images: [], // No photos
   },
   {
     text: "Scrumptious Italian sandwiches with a super friendly owner! Highly recommended! Dar Maestro! 👌🥪",
     author: "Hadi Re",
     source: "Google",
     rating: 5,
-    hasImage: true,
+    images: ["/reviews/unnamed-4.jpg"],
   },
   {
     text: "Amazing craft and fresh sandwiches. Taste make my day 🙌",
     author: "Pawel",
     source: "Google",
     rating: 5,
-    hasImage: true,
+    images: ["/reviews/unnamed-5.jpg", "/reviews/unnamed-6.jpg", "/reviews/unnamed-7.jpg"], // Pawel has 3 photos
   },
   {
     text: "Ottima paninoteca aperta da poco nel quartiere. Ottimi i panini con porchetta, vari salumi e molta scelta di verdure. Tutti ingredienti freschi e genuini. Proprietario molto simpatico e gentile!",
     author: "Filippo Marinelli",
     source: "Google",
     rating: 5,
-    hasImage: true,
+    images: [],
   },
   {
     text: "Il gestore, Franco Franchino è stato stra simpatico. Panini buoni, pieni e con prodotti di qualità. Attento ai bisogni del cliente. Lunga vita a Dar Maestro e a Franco Franchino",
     author: "Gabriele Coviello",
     source: "Google",
     rating: 5,
-    hasImage: false,
+    images: [],
   },
   {
     text: "Oltre al locale molto curato, Il maestro è anche uno chef formidabile ed è sempre attento alle combinazioni di gusti dei suoi panini. Ti accoglie con il sorriso, il profumo della porchetta Cioli e del pane fresco di Testaccio.",
     author: "Alessandro Selvaggi",
     source: "Google",
     rating: 5,
-    hasImage: false,
+    images: [],
   },
 ]
 
@@ -120,13 +121,19 @@ export function ReviewsSection() {
 
               <p className="text-foreground leading-relaxed mb-4 flex-grow text-sm">"{review.text}"</p>
 
-              {/* Image placeholder for reviews with photos */}
-              {review.hasImage && (
-                <div className="rounded-lg overflow-hidden border border-border/50 aspect-video bg-muted/20">
-                  {/* Space for review image - add manually */}
-                  <div className="w-full h-full flex items-center justify-center text-muted-foreground text-xs">
-                    Review photo
-                  </div>
+              {/* Review images */}
+              {review.images && review.images.length > 0 && (
+                <div className={`grid gap-2 ${review.images.length === 1 ? 'grid-cols-1' : review.images.length === 2 ? 'grid-cols-2' : 'grid-cols-3'}`}>
+                  {review.images.map((imageSrc, imgIndex) => (
+                    <div key={imgIndex} className="rounded-lg overflow-hidden border border-border/50 aspect-video bg-muted/20 relative">
+                      <Image
+                        src={imageSrc}
+                        alt={`${review.author}'s review photo ${imgIndex + 1}`}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  ))}
                 </div>
               )}
             </div>
