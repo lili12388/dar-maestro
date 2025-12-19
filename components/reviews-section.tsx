@@ -109,30 +109,26 @@ export function ReviewsSection() {
             >
               <Quote className="absolute top-4 right-4 w-8 h-8 text-primary/20" />
 
-              <div className="flex gap-1 mb-3">
-                {[...Array(review.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 text-primary fill-primary" />
-                ))}
+              <div className="mb-4">
+                <p className="font-semibold text-foreground text-sm mb-2">{review.author}</p>
+                <div className="flex gap-1">
+                  {[...Array(review.rating)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 text-primary fill-primary" />
+                  ))}
+                </div>
               </div>
 
               <p className="text-foreground leading-relaxed mb-4 flex-grow text-sm">"{review.text}"</p>
 
               {/* Image placeholder for reviews with photos */}
               {review.hasImage && (
-                <div className="mb-4 rounded-lg overflow-hidden border border-border/50 aspect-video bg-muted/20">
+                <div className="rounded-lg overflow-hidden border border-border/50 aspect-video bg-muted/20">
                   {/* Space for review image - add manually */}
                   <div className="w-full h-full flex items-center justify-center text-muted-foreground text-xs">
                     Review photo
                   </div>
                 </div>
               )}
-
-              <div className="flex items-center justify-between pt-3 border-t border-border/50">
-                <div>
-                  <p className="font-semibold text-foreground text-sm">{review.author}</p>
-                  <p className="text-xs text-muted-foreground">{review.source}</p>
-                </div>
-              </div>
             </div>
           ))}
         </div>
