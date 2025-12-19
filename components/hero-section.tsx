@@ -72,7 +72,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Hero Image */}
+          {/* Hero Image - Desktop */}
           <div className="relative hidden lg:block">
             <div className="relative aspect-square max-w-lg mx-auto float-animation">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 rounded-3xl blur-2xl" />
@@ -94,6 +94,20 @@ export function HeroSection() {
                     <div className="text-sm text-muted-foreground">Made to order</div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Hero Image - Mobile (Smaller, positioned bottom right) */}
+          <div className="block lg:hidden absolute bottom-8 right-4 w-32 h-32 float-animation z-10">
+            <div className="relative w-full h-full">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 rounded-2xl blur-xl" />
+              <div className="relative rounded-2xl overflow-hidden border border-primary/20 shadow-2xl">
+                <img
+                  src="/4.jpg"
+                  alt="Delicious Roman sandwich"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
