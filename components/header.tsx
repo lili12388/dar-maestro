@@ -23,11 +23,17 @@ export function Header() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
 
-      if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        // Scrolling down - hide immediately
-        setIsVisible(false)
-      } else if (currentScrollY < lastScrollY) {
-        // Scrolling up - show immediately
+      // Only hide/show on desktop (screens wider than 768px)
+      if (window.innerWidth >= 768) {
+        if (currentScrollY > lastScrollY && currentScrollY > 50) {
+          // Scrolling down - hide immediately
+          setIsVisible(false)
+        } else if (currentScrollY < lastScrollY) {
+          // Scrolling up - show immediately
+          setIsVisible(true)
+        }
+      } else {
+        // Always visible on mobile
         setIsVisible(true)
       }
 
@@ -45,18 +51,18 @@ export function Header() {
         isVisible ? "top-0" : "-top-32"
       }`}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-24">
-          <a href="#" className="flex items-center gap-3">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="flex items-center justify-between h-20 md:h-24">
+          <a href="#" className="flex items-center gap-2 md:gap-3">
             <Image 
               src="/logo.png" 
               alt="Dar Maestro Logo" 
               width={360} 
               height={120}
-              className="h-24 w-auto -ml-8"
+              className="h-16 md:h-24 w-auto -ml-4 md:-ml-8"
               priority
             />
-            <span className="font-serif text-2xl font-bold gradient-text">
+            <span className="font-serif text-xl md:text-2xl font-bold gradient-text">
               DAR MAESTRO
             </span>
           </a>
