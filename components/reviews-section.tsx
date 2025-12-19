@@ -29,14 +29,14 @@ const reviews = [
     author: "Richard Q",
     source: "Google",
     rating: 5,
-    images: [], // No photos
+    images: ["/reviews/unnamed-4.jpg"], 
   },
   {
     text: "Scrumptious Italian sandwiches with a super friendly owner! Highly recommended! Dar Maestro! 👌🥪",
     author: "Hadi Re",
     source: "Google",
     rating: 5,
-    images: ["/reviews/unnamed-4.jpg"],
+    images: ["/reviews/oww.jpg"],
   },
   {
     text: "Amazing craft and fresh sandwiches. Taste make my day 🙌",
@@ -46,8 +46,8 @@ const reviews = [
     images: ["/reviews/unnamed-5.jpg", "/reviews/unnamed-6.jpg", "/reviews/unnamed-7.jpg"], // Pawel has 3 photos
   },
   {
-    text: "Ottima paninoteca aperta da poco nel quartiere. Ottimi i panini con porchetta, vari salumi e molta scelta di verdure. Tutti ingredienti freschi e genuini. Proprietario molto simpatico e gentile!",
-    author: "Filippo Marinelli",
+    text: "We met the owner right when we walked in and he welcomed us and provided us his recommendations. The sandwiches were delicious and the food was all so fresh tasting. Thanks for lunch!",
+    author: "Eric Collins",
     source: "Google",
     rating: 5,
     images: [],

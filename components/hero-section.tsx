@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-40 md:pt-32 pb-24 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center pt-32 md:pt-28 lg:pt-24 pb-16 md:pb-20 overflow-hidden">
       {/* Animated background gradient */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/20" />
@@ -12,8 +12,8 @@ export function HeroSection() {
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
-          <div className="space-y-8">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
+          <div className="space-y-6 md:space-y-8 text-center lg:text-left">
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
               <span className="gradient-text">PANINOTECA</span>
               <br />
@@ -24,12 +24,12 @@ export function HeroSection() {
               Ti senti cazzuto? Vieni a provare subito i panini Der Maestro! 🍔😋
             </p>
 
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-lg mx-auto lg:mx-0">
               Discover the true taste of Rome. Fresh ingredients, artisanal recipes, and a warm welcome in the heart of
               Testaccio.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mt-10">
+            <div className="flex flex-col sm:flex-row gap-4 mt-8 md:mt-10 justify-center lg:justify-start">
               <Button
                 asChild
                 size="lg"
@@ -54,7 +54,7 @@ export function HeroSection() {
             </div>
 
             {/* Stats */}
-            <div className="flex items-center gap-8 mt-10">
+            <div className="flex items-center gap-6 md:gap-8 mt-8 md:mt-10 justify-center lg:justify-start">
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary">4.7</div>
                 <div className="text-sm text-muted-foreground">Rating</div>
