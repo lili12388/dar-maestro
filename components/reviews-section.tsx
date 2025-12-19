@@ -106,7 +106,7 @@ export function ReviewsSection() {
           {reviews.map((review, index) => (
             <div
               key={index}
-              className="glass-card rounded-2xl p-6 relative group hover:border-primary/50 transition-all duration-300 flex flex-col"
+              className="glass-card rounded-2xl p-6 relative group hover:border-primary/50 transition-all duration-300 flex flex-col h-full"
             >
               <Quote className="absolute top-4 right-4 w-8 h-8 text-primary/20" />
 
@@ -119,11 +119,11 @@ export function ReviewsSection() {
                 </div>
               </div>
 
-              <p className="text-foreground leading-relaxed mb-4 flex-grow text-sm">"{review.text}"</p>
+              <p className="text-foreground leading-relaxed mb-4 text-sm">"{review.text}"</p>
 
               {/* Review images */}
               {review.images && review.images.length > 0 && (
-                <div className={`grid gap-3 ${
+                <div className={`grid gap-2 mt-auto ${
                   review.images.length === 1 
                     ? 'grid-cols-1' 
                     : review.images.length === 2 
@@ -136,7 +136,7 @@ export function ReviewsSection() {
                       className={`rounded-lg overflow-hidden border border-border/50 bg-muted/20 relative ${
                         review.images.length === 3 && imgIndex === 2 ? 'col-span-2 md:col-span-1' : ''
                       }`}
-                      style={{ aspectRatio: '4/3' }}
+                      style={{ aspectRatio: '1/1', maxHeight: '150px' }}
                     >
                       <Image
                         src={imageSrc}
