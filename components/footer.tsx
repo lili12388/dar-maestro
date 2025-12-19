@@ -29,9 +29,8 @@ export function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="font-serif text-2xl font-bold mb-4">
-              <span className="gradient-text">DAR</span>
-              <span className="text-foreground"> MAESTRO</span>
+            <h3 className="font-serif text-2xl font-bold mb-4 gradient-text">
+              DAR MAESTRO
             </h3>
             <p className="text-muted-foreground leading-relaxed">
               Authentic Roman sandwiches in the heart of Testaccio. Fresh ingredients, artisanal recipes, warm

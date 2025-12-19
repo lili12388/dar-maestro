@@ -1,4 +1,4 @@
-import { MapPin, Phone, Clock, ShoppingBag } from "lucide-react"
+import { MapPin, Phone, Clock, ShoppingBag, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function LocationSection() {
@@ -84,6 +84,21 @@ export function LocationSection() {
                     className="text-muted-foreground hover:text-primary transition-colors text-lg"
                   >
                     +39 324 637 0889
+                  </a>
+                </div>
+              </div>
+
+              <div className="glass-card rounded-xl p-6 flex items-start gap-4 hover:border-accent/50 transition-colors duration-300">
+                <div className="w-14 h-14 rounded-xl bg-accent/20 flex items-center justify-center flex-shrink-0">
+                  <Mail className="w-7 h-7 text-accent" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground text-lg mb-1">Email</h3>
+                  <a
+                    href="mailto:info@darmaestro.it"
+                    className="text-muted-foreground hover:text-primary transition-colors text-lg"
+                  >
+                    info@darmaestro.it
                   </a>
                 </div>
               </div>

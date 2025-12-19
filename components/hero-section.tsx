@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 
 export function HeroSection() {
   return (
-    <section className="relative h-screen flex items-center pt-16 pb-16 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center pt-40 md:pt-32 pb-24 overflow-hidden">
       {/* Animated background gradient */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/20" />
@@ -11,25 +11,25 @@ export function HeroSection() {
         <div className="absolute bottom-1/4 -left-32 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10 -mt-12">
-        <div className="grid lg:grid-cols-2 gap-8 items-center">
-          <div>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 leading-tight">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
+          <div className="space-y-8">
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
               <span className="gradient-text">PANINOTECA</span>
               <br />
               Lunch, Dinner Brunch, Drinks
             </h1>
 
-            <p className="text-xl md:text-2xl font-bold text-primary mb-3 italic">
+            <p className="text-xl md:text-2xl font-bold text-primary italic">
               Ti senti cazzuto? Vieni a provare subito i panini Der Maestro! 🍔😋
             </p>
 
-            <p className="text-lg text-muted-foreground mb-6 leading-relaxed max-w-lg">
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
               Discover the true taste of Rome. Fresh ingredients, artisanal recipes, and a warm welcome in the heart of
               Testaccio.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 mb-8">
+            <div className="flex flex-col sm:flex-row gap-4 mt-10">
               <Button
                 asChild
                 size="lg"
@@ -54,27 +54,27 @@ export function HeroSection() {
             </div>
 
             {/* Stats */}
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-8 mt-10">
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary">4.7</div>
-                <div className="text-xs text-muted-foreground">Rating</div>
+                <div className="text-3xl font-bold text-primary">4.7</div>
+                <div className="text-sm text-muted-foreground">Rating</div>
               </div>
-              <div className="w-px h-10 bg-border" />
+              <div className="w-px h-12 bg-border" />
               <div className="text-center">
-                <div className="text-2xl font-bold text-accent">90+</div>
-                <div className="text-xs text-muted-foreground">Reviews</div>
+                <div className="text-3xl font-bold text-accent">90+</div>
+                <div className="text-sm text-muted-foreground">Reviews</div>
               </div>
-              <div className="w-px h-10 bg-border" />
+              <div className="w-px h-12 bg-border" />
               <div className="text-center">
-                <div className="text-2xl font-bold text-foreground">10+</div>
-                <div className="text-xs text-muted-foreground">Years</div>
+                <div className="text-3xl font-bold text-foreground">10+</div>
+                <div className="text-sm text-muted-foreground">Years</div>
               </div>
             </div>
           </div>
 
           {/* Hero Image */}
           <div className="relative hidden lg:block">
-            <div className="relative aspect-square max-w-md mx-auto float-animation">
+            <div className="relative aspect-square max-w-lg mx-auto float-animation">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 rounded-3xl blur-2xl" />
               <div className="relative rounded-3xl overflow-hidden border border-primary/20">
                 <img
